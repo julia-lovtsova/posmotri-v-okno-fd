@@ -22,12 +22,10 @@ html {
 }
 
 .content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* grid-template-columns: 711px 399px;
-  grid-template-areas: "result defails"; */
-  place-items: center;
+  display: grid;
+  grid-template-columns: 711px 399px;
+  grid-template-areas: "result defails";
+  place-items: inherit;
   gap: 30px;
   inline-size: 1140px;
   block-size: 100%;
@@ -38,18 +36,18 @@ html {
   background-color: #1b1919;
 }
 
-.result {
-  width: 711px;
-}
-
 .content__list {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  margin-bottom: 30px;
 }
 
 .content__list-container {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  gap: 30px;
   height: 298px;
   width: 399px;
   overflow-y: scroll;
@@ -61,6 +59,11 @@ html {
   position: relative;
   margin-bottom: 16px;
   height: 386px;
+}
+
+.result {
+  position: relative;
+  top: 8px;
 }
 
 .result__video {
