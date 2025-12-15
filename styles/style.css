@@ -48,10 +48,6 @@ html {
   gap: 30px;
 }
 
-.content__details {
-
-}
-
 .content__list-container {
   position: relative;
   height: 298px;
@@ -59,11 +55,6 @@ html {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
-.content__video-card-description-container{
-
-}
-
 
 .result__video-container {
   display: flex;
@@ -118,7 +109,6 @@ html {
 
 .search-form__fieldset-title {
   display: flex;
-  
 }
 
 .search-form__submit-button {
@@ -269,7 +259,6 @@ fieldset {
   margin: 0;
   padding: 0;
   font-size: 18px;
-
 }
 
 ul,
