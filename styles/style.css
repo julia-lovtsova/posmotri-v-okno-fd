@@ -8,6 +8,49 @@ html {
   block-size: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+blockquote,
+fieldset {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* Кастомный скроллбар */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgb(217 217 217 / 10%);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d9d9d9;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .page {
   display: flex;
   justify-content: center;
@@ -16,7 +59,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Fira Sans Condensed", Arial, Helvetica, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -31,7 +74,7 @@ html {
   block-size: 100%;
   margin: 0 30px;
   color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: "Fira Sans Condensed", Arial, Helvetica, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -40,7 +83,6 @@ html {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-bottom: 30px;
 }
 
 .content__list-container {
@@ -51,7 +93,7 @@ html {
   height: 298px;
   width: 399px;
   overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
 .result__video-container {
@@ -62,22 +104,22 @@ html {
 }
 
 .result {
-  position: relative;
-  top: 8px;
+  margin-top: 85px;
 }
 
 .result__video {
+  object-fit: cover;
   width: 100%;
 }
 
 .search-form {
   display: flex;
-  margin-bottom: -73px;
   align-items: flex-end;
   gap: 40px;
 }
 
 .button {
+  font-family: "Fira Sans Condensed", Arial, Helvetica, sans-serif;
   background-color: transparent;
   border: 1px solid white;
   gap: 10px;
@@ -150,10 +192,6 @@ html {
   text-decoration: underline;
 }
 
-.search-form__textfield::placeholder {
-  color: rgb(255 255 255 / 0.7);
-}
-
 .search-form__label {
   display: flex;
   align-items: center;
@@ -162,24 +200,25 @@ html {
   cursor: pointer;
 }
 
-.search-form__textfield:active {
-  color: white;
-}
-
 .search-form__textfield {
   border: none;
-  font-family: "Fira Sans Condensed", sans-serif;
+  color: white;
+  font-family: "Fira Sans Condensed", Arial, Helvetica, sans-serif;
   font-size: 18px;
   width: 225px;
   height: 27px;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
   background-color: transparent;
+}
+
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
 }
 
 .title {
   margin-bottom: 30px;
-  font-family: Oswald;
+  font-family: Oswald, Arial, Helvetica, sans-serif;
   font-size: 75px;
   font-weight: bold;
   text-transform: uppercase;
@@ -194,38 +233,47 @@ html {
   display: flex;
   justify-content: space-between;
   width: 390px;
-  height: 103px;
-  cursor: pointer;
-}
-
-.content__video-card:hover {
-  text-decoration: underline;
   cursor: pointer;
 }
 
 .content__video-card-title {
-  font-family: Oswald;
+  font-family: Oswald, Arial, Helvetica, sans-serif;
   font-size: 30px;
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 195px;
 }
 
 .content__video-card-description {
   font-size: 18px;
   font-weight: bold;
   line-height: 16.2px;
-  line-clamp: 1;
+  line-clamp: 4;
   color: #fff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
-.content__card-link {
-  text-decoration-color: transparent;
-  gap: 30px;
+.content__video-card-thumbnail {
+  height: 103px;
 }
 
 .content__card-link {
   display: block;
+  text-decoration-color: transparent;
+  gap: 30px;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .content__card-link:active {
@@ -238,7 +286,7 @@ html {
 }
 
 .content__card-link:focus-visible {
-  outline: 1px;
+  outline: 1px solid #fff;
 }
 
 .content__list-item {
@@ -249,45 +297,4 @@ html {
   padding: 6px 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-p,
-ul,
-ol,
-li,
-blockquote,
-fieldset {
-  margin: 0;
-  padding: 0;
-  font-size: 18px;
-}
 
-ul,
-ol {
-  list-style: none;
-}
-
-/* Кастомный скроллбар */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: rgb(217 217 217 / 10%);
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #d9d9d9;
-}
-
-.visually-hidden {
-  position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
