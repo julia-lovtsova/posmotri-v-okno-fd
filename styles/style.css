@@ -104,7 +104,7 @@ ol {
 }
 
 .result {
-  margin-top: 85px;
+  margin-top: 75px;
 }
 
 .result__video {
@@ -149,7 +149,7 @@ ol {
 .search-form__checkbox-list {
   display: flex;
   flex-direction: row;
-  gap: 30px;
+  gap: 15px;
 }
 
 .search-form__fieldset-title {
@@ -162,6 +162,9 @@ ol {
 }
 
 .search-form__fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   border: none;
   color: #fff;
   background-color: transparent;
@@ -217,7 +220,7 @@ ol {
 }
 
 .title {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-family: Oswald, Arial, Helvetica, sans-serif;
   font-size: 75px;
   font-weight: bold;
@@ -250,7 +253,6 @@ ol {
 
 .content__video-card-description {
   font-size: 18px;
-  font-weight: bold;
   line-height: 16.2px;
   line-clamp: 4;
   color: #fff;
@@ -262,6 +264,7 @@ ol {
 }
 
 .content__video-card-thumbnail {
+  width: 194px;
   height: 103px;
 }
 
@@ -274,6 +277,7 @@ ol {
 .content__card-link:hover {
   text-decoration: underline;
   cursor: pointer;
+  color: #fff;
 }
 
 .content__card-link:active {
@@ -287,6 +291,10 @@ ol {
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__list-item {
